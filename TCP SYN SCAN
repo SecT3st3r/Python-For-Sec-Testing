@@ -1,0 +1,11 @@
+# How to SYN Scan an IP Address #
+import nmap
+scanner = nmap.PortScanner()
+print("This is a simple NMAP Scan")
+print("<------------------------->")
+
+ip_add = input("Enter Target IP Address: ")
+print(f"You have entered IP Address: {ip_add}")
+print(f"NMap Scanner Version: {scanner.nmap_version()}")
+print("Iniating Scan TCP SYN Scan")
+scanner.scan(ip_add, 1-65535, "-v -sS")
