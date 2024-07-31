@@ -1,0 +1,23 @@
+# CEASAR Cypher for Understanding Encryption #
+
+
+alphabet = ['a','b','c','d','e','f','g','h','i','j','j','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+            'a','b','c','d','e','f','g','h','i','j','j','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
+def encDecrypt(text, process, shift):
+    New_string=""
+    for letter in text:
+        Index = alphabet.index(letter)
+        if process == "E":
+            Index += shift
+        elif process == "D":
+            Index -= shift
+        new_letter = alphabet[Index]
+        New_string += new_letter
+    return New_string
+
+text = input("Enter Text To Process: ")
+process = input("E or D: ")
+shift = int(input("How many characters to shift: "))
+Processed_Text = encDecrypt(text,process,shift)
+print(f"Reulting string is: {Processed_Text}")
